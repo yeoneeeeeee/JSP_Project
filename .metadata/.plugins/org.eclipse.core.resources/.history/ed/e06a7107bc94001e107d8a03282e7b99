@@ -18,7 +18,7 @@
 <body> 
 	<%
 	
-		if(user.getUserID() == null || user.getUserPassword() == null || user.getUserID() == null || 
+		if(user.getUserId() == null || user.getUserPwd() == null || user.getUserId() == null || 
 		user.getUserName() == null || user.getUserGender() == null || user.getUserEmail() == null  )
 		{
 			PrintWriter script = response.getWriter();

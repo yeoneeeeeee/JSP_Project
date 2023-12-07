@@ -15,7 +15,6 @@ public class UserDAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	ResultSet rs;
-	// new connection 공통인 것임. connection이라는 class로 빼기
 	
 	public UserDAO() throws SQLException {
 		Statement stmt = null;

@@ -15,7 +15,6 @@ public class UserDAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	ResultSet rs;
-	// new connection 공통인 것임. connection이라는 class로 빼기
 	
 	public UserDAO() throws SQLException {
 		Statement stmt = null;
@@ -53,14 +52,14 @@ public class UserDAO {
 
 	}
 	
-	public int login(String userID, String userPassword) {
+	public int login(String userID, String userPwd) {
 		String SQL = "SELECT userPwd FROM MEMBER WHERE userId = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				if(rs.getString(1).equals(userPassword))
+				if(rs.getString(1).equals(userPwd))
 					return 1; // 로그인 성공
 				else 
 					return 0; // 비밀번호 불일치
@@ -70,25 +69,5 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return -2; // 데이터베이스 오류
-	}
-	
-	public int join(User user)
-	{
-		String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?, ?)";
-		
-		try {
-			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, user.getUserID());
-			pstmt.setString(2, user.getUserPassword());
-			pstmt.setString(3, user.getUserName());
-			pstmt.setString(4, user.getUserGender());
-			pstmt.setString(5, user.getUserEmail());
-			return pstmt.executeUpdate();
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		
-		}
-		return -1; //데이터 베이스 오류
 	}
 }
