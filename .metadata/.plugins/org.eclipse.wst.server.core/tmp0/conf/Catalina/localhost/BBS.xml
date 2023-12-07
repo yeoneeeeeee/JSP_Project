@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="C:\Users\LG\Downloads\JSP_Project-master\BBS\WebContent" path="/BBS" reloadable="true" source="org.eclipse.jst.jee.server:BBS"><Resources><PreResources base="C:\Users\LG\Downloads\JSP_Project-master\BBS\build\classes" classLoaderOnly="false" className="org.apache.catalina.webresources.DirResourceSet" internalPath="/" webAppMount="/WEB-INF/classes"/></Resources></Context>
